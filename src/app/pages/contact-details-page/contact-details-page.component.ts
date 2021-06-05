@@ -24,7 +24,6 @@ export class ContactDetailsPageComponent implements OnInit {
   ngOnInit() {
     this.contact = this.route.snapshot.data.contact
     this.userService.loggedInUser$.subscribe(loggedUser => {
-      console.log('loggedUser in pape', loggedUser)
       this.movesPerContact = loggedUser.moves.filter(move => move.toId === this.contact._id)
       this.user = loggedUser
     })
